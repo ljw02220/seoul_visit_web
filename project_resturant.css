@@ -1,0 +1,323 @@
+/* 네비게이션 바 스타일 */
+#navigation {
+  background-color: #ffffff; /* 네비게이션 바 배경 색상 */
+  overflow: hidden;
+  width: 100%; /* 너비를 100%로 설정하여 전체 너비를 차지하도록 함 */
+}
+
+#navigation nav {
+  display: flex; /* flexbox 모델 적용 */
+  justify-content: center; /* 가운데 정렬 */
+  flex-wrap: wrap; /* 반응형을 위해 아이템들이 감싸질 수 있도록 함 */
+}
+
+#navigation ul {
+  list-style: none; /* 기본 리스트 스타일 제거 */
+  display: flex; /* 아이템들을 가로로 정렬 */
+  padding: 0; /* 기본 패딩 제거 */
+  margin: 0; /* 기본 마진 제거 */
+  width: 100%; /* 전체 너비 사용 */
+}
+
+#navigation li {
+  flex: 1; /* flex 아이템들이 네비게이션 바 내에서 균등한 공간을 차지하도록 함 */
+}
+
+/* 네비게이션 링크 스타일 */
+#navigation a {
+  color: #000000; /* 링크 텍스트 색상 */
+  text-align: center;
+  padding: 5px 10px; /* 상하 좌우 패딩 */
+  text-decoration: none; /* 밑줄 제거 */
+  display: flex; /* flexbox를 사용하여 아이콘과 텍스트를 정렬 */
+  align-items: center; /* 아이템들을 수직 방향 가운데로 정렬 */
+  justify-content: center; /* 아이템들을 수평 방향 가운데로 정렬 */
+  margin-top: 40px;
+  margin-right: 10px;
+}
+
+/* 링크에 마우스를 올렸을 때의 스타일 */
+#navigation a:hover {
+  background-color: #ffffff;
+  color: #4b0082;
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 600px) {
+  #navigation nav {
+    flex-direction: column; /* 모바일 화면에서는 아이템들을 수직으로 정렬 */
+    justify-content: space-between; /* 네비게이션 링크 사이에 균등한 간격을 줌 */
+  }
+
+  #navigation li {
+    text-align: left; /* 모바일 화면에서 텍스트를 왼쪽 정렬 */
+  }
+}
+
+/* 이미지 아이콘 스타일 */
+.nav-icon {
+  width: 250px; /* 아이콘 크기 */
+  height: 100px; /* 아이콘 높이 */
+  margin-right: 8px; /* 아이콘과 텍스트 사이의 간격 */
+  margin-top: 2px; /* 텍스트를 아래로 조금 더 내림 */
+}
+
+.search {
+  display: flex; /* flexbox 모델 적용 */
+  align-items: center; /* 수직 방향 가운데 정렬 */
+  justify-content: flex-end; /* 컨테이너 내부 아이템을 오른쪽 끝으로 정렬 */
+  flex: 1; /* 검색창이 네비게이션 바 내에서 남은 공간을 모두 사용하도록 함 */
+  padding-right: 10px; /* 오른쪽 패딩을 추가하여 네비게이션 바와의 간격을 조정 */
+  margin-top: 35px;
+}
+
+.search input {
+  flex-grow: 1; /* input 필드가 가능한 모든 공간을 차지하도록 함 */
+  border: 1px solid #bbb; /* 테두리 스타일 */
+  border-radius: 8px; /* 테두리 둥글기 */
+  padding: 10px; /* 내부 패딩 */
+  font-size: 14px; /* 글꼴 크기 */
+  height: 15px; /* 버튼과 동일한 높이로 설정 */
+}
+
+.search button {
+  margin-left: 10px; /* 버튼과 입력 필드 사이의 간격 */
+  padding: 10px; /* 버튼 내부 패딩 */
+  font-size: 15px; /* 글꼴 크기 */
+  background-color: green; /* 배경 색상 */
+  color: #fff; /* 글꼴 색상 */
+  border: none; /* 테두리 없음 */
+  border-radius: 8px; /* 테두리 둥글기 */
+  cursor: pointer; /* 마우스 오버 시 커서 변경 */
+  height: 35px; /* input 필드와 동일한 높이로 설정 */
+  text-align: center;
+  margin-top: 25;
+}
+
+footer {
+  position: fixed; /* 고정 위치 */
+  left: 0; /* 화면 왼쪽에 붙임 */
+  bottom: 0; /* 화면 하단에 붙임 */
+  width: 100%; /* 폭을 화면 전체로 설정 */
+  border-top: 1px solid #696969;
+  background-color: #696969;
+  padding: 1rem 0;
+}
+
+.footer-image {
+  float: left; /* 이미지를 왼쪽에 배치 */
+  margin-right: 20px; /* 이미지와 나머지 콘텐츠 사이에 여백을 줌 */
+  height: 100px; /* 이미지 높이 설정 */
+}
+
+.footer-content {
+  display: inline-block; /* 인라인 블록 요소로 만들기 */
+  vertical-align: middle; /* 중앙 정렬 */
+  width: calc(100% - 120px); /* 이미지 너비와 여백을 제외한 너비로 설정 */
+}
+
+/* 추가적인 스타일링 */
+footer {
+  border-top: 1px solid #696969;
+  background-color: #696969;
+  padding: 1rem 0;
+}
+
+.footer-message,
+.footer-contact,
+.footer-copyright {
+  font-size: 0.9rem;
+  color: #545e6f;
+  /* margin-bottom을 설정하여 각 요소 사이의 간격을 유지 */
+  margin-bottom: 0.6rem;
+}
+
+.footer-message {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+  margin: 0 0 0 0.6rem;
+}
+.footer-contact {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin: 0.6rem;
+}
+.footer-copyright {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin: 0.6rem;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+
+/* item에 hidden 처리하기. */
+.item {
+  width: calc(25% - 7px);
+  aspect-ratio: 6/5;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.item:after {
+  /* block & content */
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+}
+
+/* 이미지 상자 스타일 */
+.imgBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.imgBox img {
+  width: 100%;
+  height: 100%;
+  /* 사진이나 비디오의 규격 맞출 때 object-fit 이용하기. */
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* 텍스트 박스 스타일 */
+.textBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6); /* 투명도가 있는 배경색 */
+  color: white;
+  visibility: hidden; /* 기본 상태에서는 텍스트를 숨김 */
+  opacity: 0;
+  transform: translateY(100%);
+  transition: visibility 0s, opacity 0.4s, transform 0.4s;
+}
+
+/* 마우스 오버 시 텍스트 표시 */
+.item:hover .textBox {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 이름 및 설명 스타일 */
+.textBox p {
+  padding: 5px 10px; /* 텍스트에 패딩 추가 */
+  margin: 0; /* 기본 마진 제거 */
+}
+
+.textBox__name {
+  font-size: 18px; /* 이름의 폰트 크기 설정 */
+  font-weight: bold; /* 글씨 두껍게 */
+}
+
+.textBox__description {
+  font-size: 14px; /* 설명의 폰트 크기 설정 */
+}
+
+/* ------------------------------------------------ */
+
+.wrapper {
+  width: 360px;
+  margin-top: 20px;
+  margin-right: 20px; /* 오른쪽 정렬을 위해 추가 */
+  float: right; /* 오른쪽에 부유하도록 설정 */
+}
+
+.select,
+.options li {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.select {
+  height: 60px;
+  padding: 0 20px;
+  border-radius: 10px;
+  color: #000000;
+  justify-content: space-between;
+}
+
+.content {
+  display: none;
+  background: #ffffff;
+  margin-top: 5px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.active .content {
+  display: block;
+}
+
+.content .search-box {
+  position: relative;
+}
+
+.search-box .material-icons {
+  left: 15px;
+  line-height: 53px;
+  position: absolute;
+}
+
+.search-box input {
+  height: 53px;
+  width: 300px;
+  outline: none;
+  font-size: 17px;
+  padding: 0 10px 0 43px;
+  border: 1px solid #aabb;
+  border-radius: 10px;
+}
+
+.content .options {
+  margin-top: 10px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+.options::-webkit-scrollbar-track {
+  backgound: #f1f1f1;
+  border-radius: 25px;
+}
+
+.options::-webkit-scrollbar-thumb {
+  backgound: #ccc;
+  border-radius: 25px;
+}
+
+.options li {
+  height: 50px;
+  padding: 0 13px;
+  border-radius: 7px;
+}
+
+.options li:hover {
+  background: #f2f2f2;
+}
+
+/* iframe 스타일 */
+#embeddedPage {
+  width: 950px;
+  height: 600px;
+  border: none;
+  display: block; /* iframe을 보이게 설정 */
+  margin: 70px auto; /* 상하 마진을 줘서 위아래로 띄우고, 좌우를 중앙 정렬 */
+  transform: translateX(50px); /* 오른쪽으로 50%만큼 이동 */
+}

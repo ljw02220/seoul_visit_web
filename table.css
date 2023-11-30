@@ -1,0 +1,40 @@
+/* Define a base style for all table cells */
+.timetable td {
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid black;
+}
+
+/* Style for day cells (e.g., 월, 화, 수, 목, 금) */
+.day {
+  background-color: #b3b3cc;
+}
+
+/* Define styles for different subjects */
+.subject {
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.finance {
+  background-color: #ffcccc;
+}
+
+.business {
+  background-color: #ccffcc;
+}
+
+.health {
+  background-color: #7e7ef6;
+}
+
+.programming {
+  background-color: #ffffcc;
+}
+
+.ai {
+  background-color: #ffccff;
+}
