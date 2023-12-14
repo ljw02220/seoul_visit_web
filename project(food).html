@@ -144,6 +144,53 @@
         }
       }
 
+      function changeClickedName(li) {
+        select.firstElementChild.innerText = li.innerText; // 선택된 구의 이름으로 텍스트 변경
+        input.value = ''; // 입력 필드 초기화
+        wrapper.classList.remove('active'); // 활성 클래스 제거
+        addLi(); // 옵션 목록을 다시 추가
+
+        // "강남구"가 선택되었을 때, iframe 내에 해당 페이지를 표시
+        var iframe = document.getElementById('embeddedPage');
+        if (li.innerText === '종로구') {
+          if (!iframe) {
+            iframe = document.createElement('iframe');
+            iframe.id = 'embeddedPage';
+            document.body.appendChild(iframe); // body 태그의 마지막에 iframe 추가
+          }
+          iframe.style.display = 'block'; // iframe을 보이게 함
+          iframe.src = 'jongro_hotel.html';
+        } else {
+          if (iframe) {
+            iframe.style.display = 'none'; // 다른 구를 선택했다면 iframe을 숨김
+          }
+        }
+      }
+
+      function changeClickedName(li) {
+        select.firstElementChild.innerText = li.innerText; // 선택된 구의 이름으로 텍스트 변경
+        input.value = ''; // 입력 필드 초기화
+        wrapper.classList.remove('active'); // 활성 클래스 제거
+        addLi(); // 옵션 목록을 다시 추가
+
+        // "강남구"가 선택되었을 때, iframe 내에 해당 페이지를 표시
+        var iframe = document.getElementById('embeddedPage');
+        if (li.innerText === '중구') {
+          if (!iframe) {
+            iframe = document.createElement('iframe');
+            iframe.id = 'embeddedPage';
+            document.body.appendChild(iframe); // body 태그의 마지막에 iframe 추가
+          }
+          iframe.style.display = 'block'; // iframe을 보이게 함
+          iframe.src =
+            'https://kdayeon.github.io/program/%EA%B0%95%EB%82%A8%EA%B5%AC%EC%9D%8C%EC%8B%9D%EC%A0%90.html';
+        } else {
+          if (iframe) {
+            iframe.style.display = 'none'; // 다른 구를 선택했다면 iframe을 숨김
+          }
+        }
+      }
+
       // Initialize the list with all countries on page load
       document.addEventListener('DOMContentLoaded', addLi);
     </script>
