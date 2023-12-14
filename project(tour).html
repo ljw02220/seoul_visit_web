@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <title>프로그램 호환 프로젝트</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="project_food.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header id="navigation">
@@ -13,7 +17,7 @@
           <li><a href="project(main).html">HOME</a></li>
           <li><a href="project(hotel).html">HOTEL</a></li>
           <li><a href="project(food).html">FOOD</a></li>
-          <li><a href="project(food).html">DESSERT</a></li>
+          <li><a href="project(dessert).html">DESSERT</a></li>
           <li><a href="project(tour).html">TOUR</a></li>
           <section>
             <form action="https://search.naver.com/search.naver">
@@ -24,12 +28,124 @@
                   value=""
                   placeholder="검색어 입력"
                 />
-                <button type="submit">검색</button>
+                <button type="submit">Search</button>
               </div>
             </form>
           </section>
         </ul>
       </nav>
     </header>
+
+    <div class="wrapper">
+      <div class="select" onclick="toggleActive()">
+        <span>구를 선택해주세요</span>
+        <span class="material-icons">expand_more</span>
+      </div>
+      <div class="content">
+        <div class="search-box">
+          <span class="material-icons">search</span>
+          <input
+            class="filter"
+            type="text"
+            placeholder="검색"
+            onkeyup="filterCountries()"
+          />
+        </div>
+        <ul class="options">
+          <!-- Options will be populated here -->
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const wrapper = document.querySelector('.wrapper');
+      const select = document.querySelector('.select');
+      const options = document.querySelector('.options');
+      const input = document.querySelector('.filter'); // input element
+
+      let countries = [
+        '강남구',
+        '강동구',
+        '강북구',
+        '강서구',
+        '관악구',
+        '광진구',
+        '구로구',
+        '금천구',
+        '노원구',
+        '도봉구',
+        '동대문구',
+        '동작구',
+        '마포구',
+        '서대문구',
+        '서초구',
+        '성동구',
+        '성북구',
+        '송파구',
+        '양천구',
+        '영등포구',
+        '용산구',
+        '은평구',
+        '종로구',
+        '중구',
+        '중랑구',
+      ];
+
+      function toggleActive() {
+        wrapper.classList.toggle('active');
+      }
+
+      function filterCountries() {
+        let arr = [];
+        let searchWord = input.value.toLowerCase();
+
+        if (searchWord.length > 0) {
+          arr = countries
+            .filter((data) => data.toLowerCase().startsWith(searchWord))
+            .map((data) => `<li onclick="changeClickedName(this)">${data}</li>`)
+            .join('');
+
+          options.innerHTML = arr || '<p>조회된 구가 없습니다.</p>';
+        } else {
+          options.innerHTML = '';
+          addLi();
+        }
+      }
+
+      function addLi() {
+        options.innerHTML = ''; // Clear the list before adding new items
+        countries.forEach((country) => {
+          let li = `<li onclick="changeClickedName(this)">${country}</li>`;
+          options.insertAdjacentHTML('beforeend', li);
+        });
+      }
+
+      function changeClickedName(li) {
+        select.firstElementChild.innerText = li.innerText; // 선택된 구의 이름으로 텍스트 변경
+        input.value = ''; // 입력 필드 초기화
+        wrapper.classList.remove('active'); // 활성 클래스 제거
+        addLi(); // 옵션 목록을 다시 추가
+
+        // "강남구"가 선택되었을 때, iframe 내에 해당 페이지를 표시
+        var iframe = document.getElementById('embeddedPage');
+        if (li.innerText === '강남구') {
+          if (!iframe) {
+            iframe = document.createElement('iframe');
+            iframe.id = 'embeddedPage';
+            document.body.appendChild(iframe); // body 태그의 마지막에 iframe 추가
+          }
+          iframe.style.display = 'block'; // iframe을 보이게 함
+          iframe.src =
+            'https://kdayeon.github.io/program/%EA%B0%95%EB%82%A8%EA%B5%AC%EC%9D%8C%EC%8B%9D%EC%A0%90.html';
+        } else {
+          if (iframe) {
+            iframe.style.display = 'none'; // 다른 구를 선택했다면 iframe을 숨김
+          }
+        }
+      }
+
+      // Initialize the list with all countries on page load
+      document.addEventListener('DOMContentLoaded', addLi);
+    </script>
   </body>
 </html>
