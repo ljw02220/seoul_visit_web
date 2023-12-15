@@ -16,37 +16,147 @@
           <li><a href="project(food).html">FOOD</a></li>
           <li><a href="project(dessert).html">DESSERT</a></li>
           <li><a href="project(tour).html">TOUR</a></li>
-          <section>
-            <form action="https://search.naver.com/search.naver">
-              <div class="search">
-                <input
-                  type="text"
-                  name="query"
-                  value=""
-                  placeholder="검색어 입력"
-                />
-                <button type="submit">Search</button>
-              </div>
-            </form>
-          </section>
         </ul>
       </nav>
-    </header>
-    <div class="slideshow-container">
-      <div class="mySlides fade">
-        <img src="tower.jpg" style="width: 100%; height: 500px" />
+      <section>
+        <div class="search-and-weather">
+          <div class="search-container">
+              <form action="https://search.naver.com/search.naver">
+                  <div class="search">
+                      <input type="text" name="query" value="" placeholder="검색어 입력">
+                      <button type="submit">Search</button>
+                  </div>
+              </form>
+          </div>
+      </section>
+      </header>
+      <div class="content-section">
+        <div class="slideshows-wrapper">
+            <div class="slideshow-container">
+              <div class="mySlides fade">
+                <img src="tower.jpg" style="width: 60%; height: 500px" />
+              </div>
+              <div class="mySlides fade">
+                <img src="night.jpeg" style="width: 60%; height: 500px" />
+              </div>
+              <div class="mySlides fade">
+                <img src="img.jpeg" style="width: 60%; height: 500px" />
+              </div>
+              <div class="mySlides fade">
+                <img src="han.jpg" style="width: 60%; height: 500px" />
+              </div>
+            </div>
+            <div class="event-slideshow-container">
+              <div class="event-slides fade">
+                <div class="item1">
+                  <div class="imgBox1">
+                    <a href="https://www.globalinterpark.com/product/P0003639?lang=en">
+                      <img
+                        src="http://ticketimage.globalinterpark.com/ticketimage/Play/image/large/P0/P0003639_p.gif"
+                        alt="정재일 콘서트 - Listen"
+                      />
+                    </a>
+                  </div>
+                  <div class="textBox1">
+                    <p class="textBox__name1">정재일 콘서트 - Listen</p>
+                    <div class="slide-controls">
+                      <a class="prev" onclick="plusSlides(-1,event)">&#10094;</a>
+                      <span class="slide-number">1 / 4</span>
+                      <a class="next" onclick="plusSlides(1,event)">&#10095;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="event-slides fade">
+                <div class="item1">
+                  <div class="imgBox1">
+                    <a href="https://ddp.or.kr/index.html?menuno=241&siteno=2&bbsno=605&boardno=16&bbstopno=605&act=view&subno=">
+                      <img
+                        src="https://ddp.or.kr/usr/upload/board_thumb/zboardphotogallery1/20231109054924532.jpg"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="textBox1">
+                    <p class="textBox__name1">서울라이트 DDP 2023 겨울</p>
+                    <div class="slide-controls">
+                      <a class="prev" onclick="plusSlides(-1,event)">&#10094;</a>
+                      <span class="slide-number">2 / 4</span>
+                      <a class="next" onclick="plusSlides(1,event)">&#10095;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="event-slides fade">
+                <div class="item1">
+                  <div class="imgBox1">
+                    <a href="https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=141856&menuNo=200009">
+                      <img
+                        src="https://sema.seoul.go.kr/common/imageView?FILE_PATH=%2Fex%2FEXI01%2F2023%2F&FILE_NM=20230510150028_53f3377a89374f9cb48c17fc22b340f2_74f04f54318c43e3abd2e7e8df4cc327"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="textBox1">
+                    <p class="textBox__name1">권진규의 영원한 집</p>
+                    <div class="slide-controls">
+                      <a class="prev" onclick="plusSlides(-1,event)">&#10094;</a>
+                      <span class="slide-number">3 / 4</span>
+                      <a class="next" onclick="plusSlides(1,event)">&#10095;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="event-slides fade">
+                <div class="item1">
+                  <div class="imgBox1">
+                    <a href="https://www.stolantern.com/">
+                      <img
+                        src="https://cdn.visitkorea.or.kr/kfes/upload/contents/db/400_bcd79254-697d-47f5-a408-e022f0e9f7fd_3.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="textBox1">
+                    <p class="textBox__name1">2023 서울빛초롱축제</p>
+                    <div class="slide-controls">
+                      <a class="prev" onclick="plusSlides(-1,event)">&#10094;</a>
+                      <span class="slide-number">4 / 4</span>
+                      <a class="next" onclick="plusSlides(1,event)">&#10095;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <script>
+              let slideIndex = 1;
+              showSlides(slideIndex);
+            
+              function plusSlides(n, event) {
+                if(event) {
+                  event.stopPropagation(); // 이벤트 버블링 방지
+                }
+                showSlides(slideIndex += n);
+              }
+            
+              function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("event-slides");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slides[slideIndex-1].style.display = "block";
+              }
+            </script>
+            
+        </div>
       </div>
-      <div class="mySlides fade">
-        <img src="night.jpeg" style="width: 100%; height: 500px" />
-      </div>
-      <div class="mySlides fade">
-        <img src="img.jpeg" style="width: 100%; height: 500px" />
-      </div>
-      <div class="mySlides fade">
-        <img src="han.jpg" style="width: 100%; height: 500px" />
-      </div>
-    </div>
-    <main>
+
+      <div id="ww_df170d028a97b" v='1.3' loc='id' a='{"t":"responsive","lang":"ko","sl_lpl":1,"ids":["wl4479"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>More forecasts: <a href="https://sharpweather.com/ko/seoul/" id="ww_df170d028a97b_u" target="_blank">날씨 시간별 서울</a></div><script async src="https://app2.weatherwidget.org/js/?id=ww_df170d028a97b"></script>
+
+      <main>
       <!-- 메인 콘텐츠 -->
       <section class="intro">
         <div class="card">
