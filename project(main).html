@@ -60,9 +60,9 @@
                   <div class="textBox1">
                     <p class="textBox__name1">정재일 콘서트 - Listen</p>
                     <div class="slide-controls">
-                      <a class="prev" onclick="plusSlides(-1,event)">&#10094;</a>
+                      <button class="prev" onclick="plusSlides(-1, event)">&#10094;</button>
                       <span class="slide-number">1 / 4</span>
-                      <a class="next" onclick="plusSlides(1,event)">&#10095;</a>
+                      <button class="next" onclick="plusSlides(1, event)">&#10095;</button>
                     </div>
                   </div>
                 </div>
@@ -80,9 +80,9 @@
                   <div class="textBox1">
                     <p class="textBox__name1">서울라이트 DDP 2023 겨울</p>
                     <div class="slide-controls">
-                      <a class="prev" onclick="plusSlides(-1,event)">&#10094;</a>
+                      <button class="prev" onclick="plusSlides(-1, event)">&#10094;</button>
                       <span class="slide-number">2 / 4</span>
-                      <a class="next" onclick="plusSlides(1,event)">&#10095;</a>
+                      <button class="next" onclick="plusSlides(1, event)">&#10095;</button>
                     </div>
                   </div>
                 </div>
@@ -100,9 +100,9 @@
                   <div class="textBox1">
                     <p class="textBox__name1">권진규의 영원한 집</p>
                     <div class="slide-controls">
-                      <a class="prev" onclick="plusSlides(-1,event)">&#10094;</a>
+                      <button class="prev" onclick="plusSlides(-1, event)">&#10094;</button>
                       <span class="slide-number">3 / 4</span>
-                      <a class="next" onclick="plusSlides(1,event)">&#10095;</a>
+                      <button class="next" onclick="plusSlides(1, event)">&#10095;</button>
                     </div>
                   </div>
                 </div>
@@ -120,9 +120,9 @@
                   <div class="textBox1">
                     <p class="textBox__name1">2023 서울빛초롱축제</p>
                     <div class="slide-controls">
-                      <a class="prev" onclick="plusSlides(-1,event)">&#10094;</a>
+                      <button class="prev" onclick="plusSlides(-1, event)">&#10094;</button>
                       <span class="slide-number">4 / 4</span>
-                      <a class="next" onclick="plusSlides(1,event)">&#10095;</a>
+                      <button class="next" onclick="plusSlides(1, event)">&#10095;</button>
                     </div>
                   </div>
                 </div>
@@ -133,11 +133,10 @@
               showSlides(slideIndex);
             
               function plusSlides(n, event) {
-                if(event) {
-                  event.stopPropagation(); // 이벤트 버블링 방지
-                }
+                event.stopPropagation();
                 showSlides(slideIndex += n);
               }
+
             
               function showSlides(n) {
                 let i;
@@ -158,26 +157,68 @@
 
       <main>
       <!-- 메인 콘텐츠 -->
-      <section class="intro">
-        <div class="card">
-          <i class="css3-alt"></i>
-          <h1>Convenience</h1>
-          <p>
-            숙박, 식사, 관광에 필요한 모든 정보를 <br />손쉽게 찾을 수 있습니다.
-          </p>
-        </div>
-        <div class="card">
-          <i class="css3-alt"></i>
-          <h1>Information</h1>
-          <p>최신의 숙박업소, 음식점, 관광지 정보를 제공해줍니다.</p>
-        </div>
-        <div class="card">
-          <i class="css3-alt"></i>
-          <h1>Save time</h1>
-          <p>여행 계획을 세울 때 필요한 시간과 노력을 크게 줄여줍니다.</p>
-        </div>
-      </section>
-      <h1>축제행사</h1>
+      <div class="event-list-container">
+        <section class="event-list">
+          <ul>
+              <li class="event">
+                  <h2>이벤트 알림 <a href="이벤트_페이지_링크" class="event-link">+</a></h2>
+                  <hr>
+                  <div class="event-item">
+                      <span class="category environment"><환경></span>
+                      <p> 미세먼지 '좋음'일 때 N서울타워 20% 할인!</p>
+                      <a href="https://news.seoul.go.kr/env/archives/556565">더보기</a>
+                  </div>
+      
+                  <div class="event-item">
+                      <span class="category economy"><경제></span>
+                      <p> 올해 마지막 세일, 최대 20% 할인! <슈퍼서울위크_연말감사특별전></p>
+                      <a href="#">더보기</a>
+                  </div>
+      
+                  <div class="event-item">
+                    <span class="category environment"><환경></span>
+                    <p> 따뜻한 온실에서 만나는 겨울, 서울식물원 `열대 크리스마스`</p>
+                    <a href="https://news.seoul.go.kr/env/archives/556691">더보기</a>
+                </div>
+
+                <div class="event-item">
+                  <span class="category economy"><경제></span>
+                  <p> 개인 컵 쓰면 최대 700원 할인해 드려요! 도전! 개인 컵(다회용 컵) 사용 21일 이벤트 개최</p>
+                  <a href="https://news.seoul.go.kr/env/archives/556580">더보기</a>
+              </div>
+
+              <div class="event-item">
+                <span class="category environment"><환경></span>
+                <p> 미세먼지, 오존 예·경보 알림 신청하고, 기프티콘 받으세요!</p>
+                <a href="https://news.seoul.go.kr/env/archives/527231">더보기</a>
+            </div>
+              </li>
+          </ul>
+        </section>
+        
+        <section class="event-list1">
+          <ul>
+              <li class="event">
+                <h2>서울시 지도 <a href="map.html" class="event-link"></a></h2>
+                <hr>
+                <div id="seoul-map" style="width: 100%; height: 300px;"></div> <!-- 지도를 표시할 요소 -->
+                <script>
+                  function initSeoulMap() {
+                    var seoul = { lat: 37.5665, lng: 126.9780 }; // 서울의 위도와 경도
+                    var map = new google.maps.Map(document.getElementById('seoul-map'), {
+                      zoom: 10,
+                      center: seoul
+                    });
+                  }
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_lmPu8JgBnEN-DH1MYezorr-VUODheg4&callback=initSeoulMap" async defer></script>
+                
+              </li>
+          </ul>
+        </section>
+      </div>
+
+      <h1>축제행사 상세보기</h1>
       <div class="container">
         <div class="item">
           <div class="imgBox">
@@ -247,11 +288,11 @@
           </div>
         </div>
     </main>
-    <!-- <footer>
+    <footer>
       <footer class="footer-distributed">
-
+        <hr>
         <div class="footer-left">
-            <img src="wonderseoul2.png">
+            <img src="wonderseoul.png">
   
           <p class="footer-links">
             <a href="#">Home</a>
@@ -288,16 +329,16 @@
             <span>About the Site</span>
             당신의 여행을 완벽하게 만들어줄 원스톱 해결사, WonderSeoul에 오신 것을 환영합니다! 최신 숙박 시설, 맛있는 식당, 그리고 빼놓을 수 없는 관광지 정보를 한눈에 쉽고 빠르게 찾아볼 수 있습니다.</p>
           <div class="footer-icons">
-            주석 처리 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-            <a href="#"><i class="fab fa-facebook"></i></a>
+            <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"> -->
+            <a href="https://www.facebook.com/seoul.kr"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/seoul_official/"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.youtube.com/seoullive"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
       </footer>
-    </footer> -->
+    </footer>
     
   </body>
 </html>

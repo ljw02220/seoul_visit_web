@@ -143,12 +143,6 @@
   opacity: 0;
 }
 
-.item1:hover {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* 슬라이드 컨트롤 버튼 스타일 수정 */
 .prev,
 .next {
@@ -220,6 +214,20 @@
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Adjust for exact center alignment */
   z-index: 3; /* Ensure it appears above other elements */
+}
+
+.slide-controls button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  outline: none; /* 포커스 시 테두리 제거 */
+}
+
+/* 버튼 호버 스타일 */
+.slide-controls button:hover {
+  color: #ddd;
 }
 
 .mySlides {
@@ -406,10 +414,163 @@ h1 {
   pointer-events: none;
 }
 
+/*------------------------------------------*/
+.event-list-container {
+  display: flex; /* Flex 컨테이너 설정 */
+}
+
+.event-list {
+  flex: 1; /* 각 이벤트 리스트가 동일한 공간을 차지하도록 설정 */
+  margin-right: 10px; /* 오른쪽 여백 추가 */
+}
+
+.event-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.event-list .event {
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.event-list .event-item a {
+  color: #007bff;
+  white-space: nowrap; /* 링크도 한 줄로 유지 */
+}
+
+.event-list .event-item {
+  display: flex; /* Flex 레이아웃 사용 */
+  align-items: center; /* 수직 정렬을 중앙으로 설정 */
+  width: 100%; /* 전체 너비 설정 */
+  margin-bottom: 10px;
+}
+
+.event-list .event-item p {
+  flex-basis: 60%; /* 기본 크기를 30%로 설정 */
+  overflow: hidden; /* 넘치는 내용 숨기기 */
+  white-space: nowrap; /* 텍스트를 한 줄로 만들기 */
+  text-overflow: ellipsis; /* 넘치는 텍스트를 ...로 표시 */
+  margin-right: 10px; /* "자세히 보기"와의 여백 */
+}
+
+.event-list .event-item a {
+  color: #007bff;
+  white-space: nowrap; /* 링크도 한 줄로 유지 */
+}
+
+.event-list .event-item a:hover {
+  text-decoration: underline;
+}
+
+.event-list h2 {
+  display: flex; /* flex 레이아웃으로 변경 */
+  align-items: center; /* 세로 방향 중앙 정렬 */
+  margin-bottom: 5px; /* 제목과 <hr> 사이의 간격 줄임 */
+  height: 40px; /* 제목 높이 고정 */
+}
+
+.event-list hr {
+  margin-top: 0; /* <hr>의 상단 마진 제거 */
+  width: 75%; /* 수평선 길이 조정 */
+  border: none;
+  height: 1px;
+  background-color: #333;
+  margin-left: 0;
+}
+
+.event-list .event-link {
+  text-decoration: none; /* 링크 밑줄 제거 */
+  color: #000000; /* 링크 색상 */
+  font-size: 1.2em; /* 버튼 크기 */
+  margin-left: 400px; /* 텍스트와 버튼 사이의 간격 */
+}
+
+.category {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.category.environment {
+  color: green; /* 환경 카테고리 글자 색상 */
+}
+
+.category.economy {
+  color: blue; /* 경제 카테고리 글자 색상 */
+}
+
+.event-list1 {
+  flex: 1; /* 각 이벤트 리스트가 동일한 공간을 차지하도록 설정 */
+  margin-right: 10px; /* 오른쪽 여백 추가 */
+}
+
+.event-list1 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.event-list1 .event {
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.event-list1 .event-item a {
+  color: #007bff;
+  white-space: nowrap; /* 링크도 한 줄로 유지 */
+}
+
+.event-list1 .event-item {
+  display: flex; /* Flex 레이아웃 사용 */
+  align-items: center; /* 수직 정렬을 중앙으로 설정 */
+  width: 100%; /* 전체 너비 설정 */
+  margin-bottom: 10px;
+}
+
+.event-list1 .event-item p {
+  flex-basis: 60%; /* 기본 크기를 30%로 설정 */
+  overflow: hidden; /* 넘치는 내용 숨기기 */
+  white-space: nowrap; /* 텍스트를 한 줄로 만들기 */
+  text-overflow: ellipsis; /* 넘치는 텍스트를 ...로 표시 */
+  margin-right: 10px; /* "자세히 보기"와의 여백 */
+}
+
+.event-list1 .event-item a {
+  color: #007bff;
+  white-space: nowrap; /* 링크도 한 줄로 유지 */
+}
+
+.event-list1 .event-item a:hover {
+  text-decoration: underline;
+}
+
+.event-list1 h2 {
+  display: flex; /* flex 레이아웃으로 변경 */
+  align-items: center; /* 세로 방향 중앙 정렬 */
+  margin-bottom: 5px; /* 제목과 <hr> 사이의 간격 줄임 */
+  height: 40px; /* 제목 높이 고정 */
+}
+
+.event-list1 hr {
+  margin-top: 0; /* <hr>의 상단 마진 제거 */
+  width: 100%; /* 수평선 길이 조정 */
+  border: none;
+  height: 1px;
+  background-color: #333;
+  margin-left: 0;
+}
+
+.event-list1 .event-link {
+  text-decoration: none; /* 링크 밑줄 제거 */
+  color: #000000; /* 링크 색상 */
+  font-size: 1.2em; /* 버튼 크기 */
+  margin-left: 5px; /* 텍스트와 버튼 사이의 간격 */
+}
+
 /*----------------------------------------*/
 
 footer {
-  position: fixed;
+  position: relative;
+  transform: translateY(0%);
   bottom: 0;
 }
 
@@ -423,7 +584,6 @@ footer {
 }
 
 .footer-distributed {
-  background-color: #808080;
   box-sizing: border-box;
   width: 100%;
   text-align: left;
@@ -458,13 +618,13 @@ footer {
 }
 
 .footer-distributed h3 span {
-  color: #8c474d;
+  color: #458bda;
 }
 
 /* Footer links */
 
 .footer-distributed .footer-links {
-  color: #ffffff;
+  color: #000000;
   margin: 20px 0 12px;
 }
 
@@ -476,7 +636,7 @@ footer {
 }
 
 .footer-distributed .footer-company-name {
-  color: #ffffff;
+  color: #000000;
   font-size: 14px;
   font-weight: normal;
   margin: 0;
@@ -489,8 +649,7 @@ footer {
 }
 
 .footer-distributed .footer-center i {
-  background-color: #33383b;
-  color: #8c474d;
+  color: #458bda;
   font-size: 25px;
   width: 38px;
   height: 38px;
@@ -508,7 +667,7 @@ footer {
 
 .footer-distributed .footer-center p {
   display: inline-block;
-  color: #ffffff;
+  color: #000000;
   vertical-align: middle;
   margin: 0;
 }
@@ -521,7 +680,7 @@ footer {
 }
 
 .footer-distributed .footer-center p a {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -533,7 +692,7 @@ footer {
 
 .footer-distributed .footer-company-about {
   line-height: 20px;
-  color: #ffffff;
+  color: #000000;
   font-size: 13px;
   font-weight: normal;
   margin: 0;
@@ -541,7 +700,7 @@ footer {
 
 .footer-distributed .footer-company-about span {
   display: block;
-  color: #8c474d;
+  color: #458bda;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -556,11 +715,11 @@ footer {
   width: 35px;
   height: 35px;
   cursor: pointer;
-  background-color: #33383b;
+  background-color: #ffffff;
   border-radius: 2px;
 
   font-size: 20px;
-  color: #ffffff;
+  color: #458bda;
   text-align: center;
   line-height: 35px;
 

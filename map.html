@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>맵 API</title>
+    <style type="text/css">
+      * {
+        margin: 5px;
+        padding: 5px;
+      }
+      #map,
+      #pano {
+        width: 600px;
+        height: 400px;
+      }
+      #pano {
+        display: none; /* 초기에는 거리뷰 숨김 */
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_lmPu8JgBnEN-DH1MYezorr-VUODheg4&region=kr"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="pano"></div>
+    <button id="btn3">거리뷰</button>
+
+    <script type="text/javascript">
+      var btn3 = document.getElementById('btn3');
+      btn3.addEventListener('click', toggleStreetView);
+
+      var map;
+      var panorama; // 전역 범위에서 panorama 정의
+
+      function initMap() {
+        var ll = { lat: 37.534216, lng: 126.99166 };
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: ll,
+        });
+        panorama = new google.maps.StreetViewPanorama(
+          document.getElementById('pano'),
+          {
+            position: ll,
+            pov: {
+              heading: 34,
+              pitch: 10,
+            },
+          }
+        );
+        map.setStreetView(panorama);
+      }
+      initMap();
+
+      function toggleStreetView() {
+        var visible = panorama.getVisible();
+        if (visible) {
+          panorama.setVisible(false);
+          document.getElementById('pano').style.display = 'none';
+          document.getElementById('map').style.display = 'block';
+        } else {
+          panorama.setVisible(true);
+          document.getElementById('pano').style.display = 'block';
+          document.getElementById('map').style.display = 'none';
+        }
+      }
+    </script>
+  </body>
+</html>
